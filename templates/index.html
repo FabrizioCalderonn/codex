@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Freelancer Services</title>
+</head>
+<body>
+    <h1>Servicios ofrecidos</h1>
+    <ul>
+        {% for service in services %}
+        <li>
+            <strong>{{ service.name }}</strong>: {{ service.description }}
+        </li>
+        {% else %}
+        <li>No hay servicios aún.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_service') }}">Agregar servicio</a>
+</body>
+</html>
